@@ -31,21 +31,28 @@ export function Hero() {
           Landing Pages de Alta Performance
         </motion.div>
 
-        {/* Aggressive Modern Headline */}
-        <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] md:leading-[0.9]">
-          CRIAMOS O <br />
+        {/* High-Conversion Headline */}
+        <h1 className="text-6xl md:text-[5.5rem] font-black tracking-tight leading-[0.9] md:leading-[0.9]">
+          TRANSFORME <br />
           <span className="text-gradient drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]">
-            SUCESSO DIGITAL
+            VISITANTES EM CLIENTES
           </span> <br />
-          DO SEU NEGÓCIO
+          TODOS OS DIAS.
         </h1>
 
-        <p className="text-lg md:text-2xl text-white/50 max-w-3xl mx-auto font-medium leading-relaxed tracking-tight">
-          Landing pages simples, rápidas e focadas em converter visitantes em <span className="text-white/80">faturamento real</span> para a sua empresa.
-        </p>
+        <div className="space-y-6 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-accent-cyan/80 font-bold uppercase tracking-widest">
+            Se o seu negócio não está gerando contatos pela internet, você está deixando dinheiro na mesa.
+          </p>
+          <p className="text-lg md:text-xl text-white/50 font-medium leading-relaxed tracking-tight">
+            Nós criamos landing pages simples, rápidas e feitas para uma única coisa: <span className="text-white">fazer o cliente entrar em contato com você.</span>
+            <br />
+            <span className="text-white/30 italic">Sem complicação. Sem desperdício.</span>
+          </p>
+        </div>
 
         {/* Action Center */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
           <motion.a
             href={whatsappLink}
             target="_blank"
@@ -54,38 +61,32 @@ export function Hero() {
             whileTap={{ scale: 0.95 }}
             className="w-full sm:w-auto px-12 py-5 rounded-2xl bg-white text-background font-black text-xl transition-all hover:bg-accent-cyan hover:shadow-[0_0_40px_rgba(0,242,255,0.5)] flex items-center justify-center group"
           >
-            Falar pelo WhatsApp
+            Começar agora
             <Rocket className="ml-3 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </motion.a>
-          
-          <a href="#projects" className="text-white/40 hover:text-white transition-colors flex items-center gap-2 font-bold uppercase text-xs tracking-widest">
-            Ver projetos reais <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
 
-        {/* Minimalist Trust & Technical Badges */}
+        {/* Real Benefits Checklist */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-20 border-t border-white/5"
+          className="grid grid-cols-1 md:grid-cols-5 gap-4 pt-16 border-t border-white/5"
         >
-          <div className="flex flex-col items-center space-y-2 group">
-            <CheckCircle className="w-5 h-5 text-accent-cyan transition-transform group-hover:scale-110" />
-            <span className="text-[10px] uppercase font-black tracking-widest text-white/30 group-hover:text-accent-cyan transition-colors">Performance Ultra</span>
-          </div>
-          <div className="flex flex-col items-center space-y-2 group">
-            <CheckCircle className="w-5 h-5 text-accent-cyan transition-transform group-hover:scale-110" />
-            <span className="text-[10px] uppercase font-black tracking-widest text-white/30 group-hover:text-accent-cyan transition-colors">Design Futurista</span>
-          </div>
-          <div className="flex flex-col items-center space-y-2 group">
-            <CheckCircle className="w-5 h-5 text-accent-cyan transition-transform group-hover:scale-110" />
-            <span className="text-[10px] uppercase font-black tracking-widest text-white/30 group-hover:text-accent-cyan transition-colors">Foco em Lead</span>
-          </div>
-          <div className="flex flex-col items-center space-y-2 group">
-            <CheckCircle className="w-5 h-5 text-accent-cyan transition-transform group-hover:scale-110" />
-            <span className="text-[10px] uppercase font-black tracking-widest text-white/30 group-hover:text-accent-cyan transition-colors">Carregamento Instantâneo</span>
-          </div>
+          {[
+            "Design profissional",
+            "Carregamento rápido",
+            "Foco total em conversão",
+            "Integração com WhatsApp",
+            "Dispositivo Friendly"
+          ].map((benefit, i) => (
+            <div key={i} className="flex items-center justify-center md:justify-start gap-2 group">
+              <CheckCircle className="w-4 h-4 text-accent-cyan flex-shrink-0" />
+              <span className="text-[10px] uppercase font-black tracking-widest text-white/40 group-hover:text-white transition-colors">
+                {benefit}
+              </span>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
     </section>

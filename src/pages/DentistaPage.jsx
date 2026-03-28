@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Activity, MapPin, Phone, ArrowLeft, Star, Heart, CheckCircle, Clock } from 'lucide-react';
+import { User, Activity, MapPin, Phone, ArrowLeft, Star, Heart, CheckCircle, Clock, ShieldCheck, Zap, Award, Sparkles, PlusCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function DentistaPage() {
+  const whatsappLink = "https://wa.me/5511933496135?text=Olá,%20quero%20agendar%20uma%20avaliação";
+
   return (
-    <div className="min-h-screen bg-white text-[#1a2b3c] font-sans selection:bg-[#4ea8de] selection:text-white">
+    <div className="min-h-screen bg-white text-[#1a2b3c] font-sans selection:bg-[#4ea8de] selection:text-white antialiased">
       {/* Top Banner - Back to Main */}
       <div className="bg-[#4ea8de]/10 border-b border-[#4ea8de]/20 py-2 px-4 text-center sticky top-0 z-50 backdrop-blur-md">
         <Link to="/" className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#4ea8de] hover:text-[#1a2b3c] transition-colors">
@@ -13,44 +15,62 @@ export default function DentistaPage() {
         </Link>
       </div>
 
-      <header className="py-6 px-10 flex justify-between items-center bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-[33px] z-40">
+      <header className="py-6 px-10 flex justify-between items-center bg-white/90 backdrop-blur-xl border-b border-gray-100 sticky top-[33px] z-40">
         <div className="flex items-center gap-2">
-          <Heart className="w-6 h-6 text-[#4ea8de] fill-[#4ea8de]" />
-          <span className="text-2xl font-black text-[#1a2b3c] tracking-tight">SORRISO <span className="text-[#4ea8de]">DENTAL</span></span>
+           <div className="p-2 bg-blue-50 rounded-2xl shadow-sm">
+             <Heart className="w-8 h-8 text-[#4ea8de] fill-[#4ea8de]" />
+           </div>
+          <span className="text-2xl font-black text-[#1a2b3c] tracking-tighter uppercase italic">SORRISO <span className="text-[#4ea8de]">DENTAL</span></span>
         </div>
-        <nav className="hidden md:flex gap-10 text-sm font-semibold text-gray-500 uppercase tracking-widest">
-          <a href="#especialidades" className="hover:text-[#4ea8de] transition-all">Especialidades</a>
-          <a href="#sobre" className="hover:text-[#4ea8de] transition-all">Sobre</a>
-          <a href="#contato" className="bg-[#4ea8de] text-white px-8 py-3 rounded-full hover:bg-[#1a2b3c] transition-all shadow-xl shadow-[#4ea8de]/20">AGENDAR CONSULTA</a>
+        <nav className="hidden md:flex gap-12 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
+          <a href="#tecnologia" className="hover:text-[#4ea8de] transition-colors">Prótese & Estética</a>
+          <a href="#transformacoes" className="hover:text-[#4ea8de] transition-colors">Casos</a>
+          <a href="#equipe" className="hover:text-[#4ea8de] transition-colors">Especialistas</a>
+          <a href="#contato" className="bg-[#4ea8de] text-white px-10 py-3 rounded-full hover:bg-[#1a2b3c] transition-all shadow-xl shadow-[#4ea8de]/20">AGENDAR AVALIAÇÃO</a>
         </nav>
       </header>
 
       <main>
         {/* Clinical Clean Hero */}
-        <section className="relative py-28 px-10 overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+        <section className="relative py-32 px-10 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-white min-h-[90vh] flex items-center">
+          <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-24 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              className="space-y-10"
+              transition={{ duration: 1 }}
+              className="space-y-12"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-[#4ea8de] text-xs font-bold uppercase tracking-[0.2em] shadow-sm">
-                Cuidado com Excelência e Carinho
-              </div>
-              <h1 className="text-6xl md:text-7xl font-black text-[#1a2b3c] leading-[1.1] tracking-tighter">
-                SUA SAÚDE BUCAL <br />
-                EM <span className="text-[#4ea8de]">BOAS MÃOS</span>.
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/50 text-[#4ea8de] text-[10px] font-black uppercase tracking-[0.3em] shadow-sm border border-[#4ea8de]/10"
+              >
+                Cuidado Moderno com Excelência
+              </motion.div>
+              <h1 className="text-7xl md:text-8xl font-black text-[#1a2b3c] leading-[0.95] tracking-tighter italic">
+                A EVOLUÇÃO <br />
+                DO SEU <br />
+                <span className="text-[#4ea8de] uppercase underline decoration-[#1a2b3c]/10 decoration-8 underline-offset-8">SORRISO</span>.
               </h1>
-              <p className="text-gray-500 text-xl font-medium leading-relaxed max-w-lg">
-                Cuidando do seu sorriso com tecnologia de ponta e um atendimento humanizado no coração da sua cidade.
+              <p className="text-gray-500 text-2xl font-medium leading-relaxed max-w-lg">
+                Combinamos alta tecnologia com um toque humano para transformar vidas através de sorrisos saudáveis e radiantes.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 pt-4">
-                <button className="bg-[#1a2b3c] text-white px-12 py-5 rounded-none font-black text-xs uppercase tracking-widest hover:bg-[#4ea8de] transition-all shadow-2xl flex items-center justify-center">
-                  AGENDAR MINHA CONSULTA <ArrowLeft className="ml-2 w-4 h-4 rotate-180" />
-                </button>
-                <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  +500 Avaliações 5 Estrelas
+              <div className="flex flex-col sm:flex-row gap-8 pt-6">
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#1a2b3c] text-white px-14 py-6 rounded-none font-black text-xs uppercase tracking-[0.4em] hover:bg-[#4ea8de] transition-all shadow-2xl text-center"
+                >
+                  AGENDAR MINHA AVALIAÇÃO <Zap className="ml-2 w-5 h-5 inline fill-current" />
+                </a>
+                <div className="flex items-center gap-6 border-l border-gray-100 pl-10">
+                   <div className="text-center">
+                      <div className="text-4xl font-black text-[#1a2b3c]">4.9</div>
+                      <div className="text-[10px] uppercase font-black text-[#4ea8de] tracking-[0.2em] mt-1 space-x-1">
+                        <Star className="w-3 h-3 inline fill-current" /> <Star className="w-3 h-3 inline fill-current" /> <Star className="w-3 h-3 inline fill-current" /> <Star className="w-3 h-3 inline fill-current" /> <Star className="w-3 h-3 inline fill-current" />
+                      </div>
+                   </div>
                 </div>
               </div>
             </motion.div>
@@ -58,83 +78,212 @@ export default function DentistaPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="relative p-10"
+              transition={{ delay: 0.4, duration: 1 }}
+              className="relative"
             >
-              <div className="absolute inset-x-10 inset-y-0 bg-[#4ea8de]/5 rounded-[60px] blur-3xl -z-10" />
-              <img 
-                src="/assets/dentista.png" 
-                alt="Sorriso Dental Mockup" 
-                className="w-full h-auto rounded-[40px] shadow-2xl border-8 border-white"
-              />
+              <div className="absolute inset-0 bg-[#4ea8de]/5 rounded-[80px] blur-[120px] -z-10 animate-pulse" />
+              <div className="relative p-10 bg-white shadow-2xl rounded-[100px] border border-gray-50 group">
+                <img 
+                  src="/assets/dentista.png" 
+                  alt="Sorriso Dental Mockup" 
+                  className="w-full h-auto rounded-[80px] shadow-sm transition-transform duration-1000 group-hover:scale-103"
+                />
+                <div className="absolute -bottom-10 -right-10 bg-[#4ea8de] text-white p-10 rounded-[60px] shadow-2xl hidden lg:block border-8 border-white">
+                   <Award className="w-12 h-12 mb-4" />
+                   <p className="text-3xl font-black tracking-tighter">12+ Anos</p>
+                   <p className="text-[10px] uppercase font-black tracking-widest opacity-60">de Tradição Médica</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Specialists Highlights */}
-        <section id="especialidades" className="py-24 px-10 max-w-6xl mx-auto space-y-20">
-           <div className="text-center space-y-6">
-              <h2 className="text-4xl font-black text-[#1a2b3c] tracking-tight">NOSSAS ESPECIALIDADES</h2>
-              <div className="w-20 h-1 bg-[#4ea8de] mx-auto rounded-full" />
+        {/* Clinical Stats - Trust Bar */}
+        <section className="bg-[#1a2b3c] py-20 px-10 text-white">
+           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+              <div className="space-y-2">
+                 <div className="text-5xl font-black text-[#4ea8de]">5k+</div>
+                 <p className="text-[10px] uppercase font-black tracking-[0.3em] opacity-40">Pacientes Felizes</p>
+              </div>
+              <div className="space-y-2">
+                 <div className="text-5xl font-black text-[#4ea8de]">10k+</div>
+                 <p className="text-[10px] uppercase font-black tracking-[0.3em] opacity-40">Implantes Realizados</p>
+              </div>
+              <div className="space-y-2">
+                 <div className="text-5xl font-black text-[#4ea8de]">100%</div>
+                 <p className="text-[10px] uppercase font-black tracking-[0.3em] opacity-40">Segurança Estéril</p>
+              </div>
+              <div className="space-y-2">
+                 <div className="text-5xl font-black text-[#4ea8de]">24h</div>
+                 <p className="text-[10px] uppercase font-black tracking-[0.3em] opacity-40">Suporte Emergencial</p>
+              </div>
            </div>
-           <div className="grid md:grid-cols-3 gap-8 ">
+        </section>
+
+        {/* Technology & Clinical Excellence (New) */}
+        <section id="tecnologia" className="py-40 px-10 max-w-7xl mx-auto space-y-32">
+           <div className="grid md:grid-cols-2 gap-24 items-center">
+              <div className="space-y-10 order-2 md:order-1">
+                 <h2 className="text-5xl md:text-7xl font-black text-[#1a2b3c] tracking-tighter italic uppercase leading-tight">TECNOLOGIA <br /> <span className="text-[#4ea8de]">A FAVOR</span> DA SAÚDE</h2>
+                 <p className="text-gray-400 text-xl font-medium leading-relaxed">Não é apenas sorrir, é sentir-se bem. Investimos nos equipamentos mais modernos do mundo para diagnósticos indolores e precisos.</p>
+                 <div className="space-y-6">
+                    {[
+                      { title: "Escaneamento 3D Intraloral", desc: "Dê adeus às moldagens desconfortáveis com gesso." },
+                      { title: "Anestesia Sem Dor (I.A.)", desc: "Controle digital de entrada para conforto absoluto." },
+                      { title: "Laser Whitening Premium", desc: "Dentes brancos em apenas 45 minutos de sessão." }
+                    ].map((tech, i) => (
+                      <div key={i} className="flex gap-6 group">
+                         <div className="mt-1"><CheckCircle className="w-6 h-6 text-[#4ea8de]" /></div>
+                         <div className="space-y-2">
+                            <h4 className="text-2xl font-black text-[#1a2b3c] uppercase italic tracking-tight">{tech.title}</h4>
+                            <p className="text-gray-500 text-sm font-medium">{tech.desc}</p>
+                         </div>
+                      </div>
+                    ))}
+                 </div>
+              </div>
+              <div className="relative order-1 md:order-2">
+                 <div className="aspect-square bg-blue-50 rounded-[100px] flex items-center justify-center text-[#4ea8de]/40 font-black text-9xl">TECH</div>
+                 <div className="absolute -top-10 -left-10 glass p-8 rounded-[40px] border-blue-100 flex items-center gap-4">
+                    <Sparkles className="w-8 h-8 text-[#4ea8de]" />
+                    <div>
+                       <p className="text-sm font-black text-[#1a2b3c] uppercase">Padrão Ouro</p>
+                       <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Equipamentos 2024</p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </section>
+
+        {/* Success Stories (New) */}
+        <section id="transformacoes" className="py-32 px-10 bg-gray-50 border-y border-gray-100">
+           <div className="max-w-7xl mx-auto space-y-20">
+              <div className="text-center space-y-6">
+                 <h2 className="text-4xl font-extrabold text-[#1a2b3c] tracking-widest uppercase italic bg-white inline-block px-10 py-4 shadow-sm border border-gray-100">CASOS DE SUCESSO</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-10">
+                 {[
+                    { patient: "Letícia Miranda", case: "Lentes de Contato", review: "Meu sonho era ter um sorriso de comercial. Fiz tudo em 1 semana!", time: "Sessões: 02" },
+                    { patient: "Carlos Andrade", car: "Implante Total", review: "Não conseguia comer o que gostava. A equipe mudou minha vida social.", time: "Sessões: 04" }
+                 ].map((story, i) => (
+                    <div key={i} className="bg-white p-12 rounded-[50px] shadow-sm border border-gray-100 space-y-8 group transition-all hover:bg-[#4ea8de] hover:text-white">
+                       <div className="flex justify-between items-start">
+                          <Stars />
+                          <span className="text-[10px] font-black uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100">{story.time}</span>
+                       </div>
+                       <blockquote className="text-2xl font-black tracking-tight leading-relaxed">
+                         "{story.review}"
+                       </blockquote>
+                       <div className="flex items-center gap-4 border-t border-gray-50 group-hover:border-white/20 pt-8">
+                          <div className="w-12 h-12 rounded-full bg-blue-50 group-hover:bg-white/20" />
+                          <div>
+                             <p className="font-black uppercase tracking-tight italic">{story.patient}</p>
+                             <p className="text-xs font-bold uppercase tracking-widest opacity-40 group-hover:opacity-100">{story.case}</p>
+                          </div>
+                       </div>
+                    </div>
+                 ))}
+              </div>
+           </div>
+        </section>
+
+        {/* Specialist Team (New) */}
+        <section id="equipe" className="py-40 px-10 max-w-7xl mx-auto flex flex-col items-center">
+           <div className="text-center space-y-4 mb-24">
+              <p className="text-[#4ea8de] font-black text-xs uppercase tracking-[0.4em]">Autoridade Clínica</p>
+              <h2 className="text-5xl md:text-6xl font-black text-[#1a2b3c] tracking-tight uppercase">DOUTORES ESPECIALISTAS</h2>
+           </div>
+           
+           <div className="grid md:grid-cols-3 gap-12 w-full">
               {[
-                { title: "Clínica Geral", icon: <CheckCircle /> },
-                { title: "Ortodontia", icon: <Activity /> },
-                { title: "Implantes", icon: <Star /> }
-              ].map((spec, i) => (
-                <div key={i} className="p-12 rounded-[40px] bg-white border border-gray-100 hover:border-[#4ea8de]/30 hover:shadow-2xl transition-all group text-center space-y-6">
-                   <div className="w-16 h-16 rounded-3xl bg-blue-50 flex items-center justify-center text-[#4ea8de] mx-auto group-hover:scale-110 transition-transform">
-                      {spec.icon}
-                   </div>
-                   <h3 className="text-2xl font-black text-[#1a2b3c] tracking-tight">{spec.title}</h3>
-                   <p className="text-gray-400 text-sm leading-relaxed px-4">
-                      Cuidando do seu sorriso com carinho e resultado garantido.
-                   </p>
-                </div>
+                { name: "Dr. André Santos", role: "PhD em Ortodontia", bio: "Especialista em alinhadores invisíveis e estética avançada." },
+                { name: "Dra. Beatriz Costa", role: "Mestre em Implantodontia", bio: "Referência nacional em procedimentos indolores e carga imediata." },
+                { name: "Dr. Felipe Lima", role: "Estética Bucal", bio: "Focado em harmonização orofacial e lentes de porcelana premium." }
+              ].map((dr, i) => (
+                 <div key={i} className="text-center space-y-8 p-12 rounded-[60px] hover:shadow-2xl hover:bg-gray-50 transition-all border border-transparent hover:border-blue-50">
+                    <div className="w-48 h-48 rounded-[60px] bg-blue-50 mx-auto flex items-center justify-center mb-8 relative">
+                       <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-full shadow-lg"><Activity className="w-6 h-6 text-[#4ea8de]" /></div>
+                    </div>
+                    <div>
+                       <h3 className="text-2xl font-black text-[#1a2b3c] italic uppercase tracking-tighter leading-none">{dr.name}</h3>
+                       <p className="text-[#4ea8de] font-bold text-[10px] uppercase tracking-widest mt-3 mb-6">{dr.role}</p>
+                       <p className="text-gray-400 text-sm leading-relaxed px-6 italic">"{dr.bio}"</p>
+                    </div>
+                 </div>
               ))}
            </div>
         </section>
 
-        {/* Mock Testimonial Section */}
-        <section className="bg-gray-50 py-24 px-10">
-           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 border-l-4 border-[#4ea8de] pl-12">
-              <div className="space-y-6">
-                 <div className="flex gap-1 text-yellow-400">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400" />)}
-                 </div>
-                 <blockquote className="text-2xl font-semibold text-[#1a2b3c] italic leading-relaxed">
-                   "A melhor experiência que já tive em uma clínica. Atendimento impecável e o resultado final superou minhas expectativas."
-                 </blockquote>
-                 <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-200" />
-                    <div>
-                       <p className="font-bold text-[#1a2b3c]">Ana Silva</p>
-                       <p className="text-gray-400 text-xs uppercase tracking-widest font-bold">Paciente de Ortodontia</p>
-                    </div>
-                 </div>
-              </div>
-              <div className="flex flex-col justify-center space-y-4">
-                 <div className="flex items-center gap-3 text-sm font-bold text-gray-400">
-                   <Clock className="w-5 h-5 text-[#4ea8de]" /> Seg - Sex: 08:00 - 18:00
-                 </div>
-                 <div className="flex items-center gap-3 text-sm font-bold text-gray-400">
-                   <MapPin className="w-5 h-5 text-[#4ea8de]" /> Av. Central, 1234 - Centro
-                 </div>
-              </div>
+        {/* Accepted Plans Section (New) */}
+        <section className="py-20 bg-gray-50 flex items-center justify-center overflow-hidden">
+           <div className="flex gap-20 opacity-20 whitespace-nowrap animate-infinite-scroll">
+              <PlanLabel name="Amil Dental" />
+              <PlanLabel name="SulAmérica" />
+              <PlanLabel name="Unimed Odonto" />
+              <PlanLabel name="Bradesco" />
+              <PlanLabel name="Interodonto" />
+              <PlanLabel name="Care Plus" />
+              <PlanLabel name="Amil Dental" />
            </div>
         </section>
       </main>
 
-      <footer className="py-20 px-10 text-center bg-white border-t border-gray-100 space-y-6">
-         <div className="flex items-center justify-center gap-2 grayscale opacity-30">
-            <Heart className="w-6 h-6 fill-current" />
-            <span className="text-xl font-black tracking-tight text-[#1a2b3c]">SORRISO DENTAL</span>
+      <footer className="py-28 bg-[#1a2b3c] text-white overflow-hidden relative">
+         <div className="absolute top-0 left-0 p-20 opacity-5 pointer-events-none">
+            <PlusCircle className="w-64 h-64" />
          </div>
-         <p className="text-gray-400 text-[10px] uppercase font-bold tracking-[0.2em] max-w-md mx-auto">
-            © 2024 Clínica Sorriso Dental. Landing page demonstrativa criada com Land Flow Lab.
-         </p>
+         <div className="max-w-7xl mx-auto px-10 space-y-20 relative">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-16">
+               <div className="space-y-8 max-w-sm">
+                  <div className="flex items-center gap-2">
+                     <Heart className="w-8 h-8 fill-[#4ea8de] text-[#4ea8de]" />
+                     <span className="text-3xl font-black tracking-tighter italic uppercase">SORRISO <span className="text-[#4ea8de]">DENTAL</span></span>
+                  </div>
+                  <p className="text-white/40 font-medium italic leading-relaxed">Sua nova experiência em odontologia premium. Localizada estrategicamente para melhor lhe atender.</p>
+               </div>
+               <div className="grid grid-cols-2 lg:grid-cols-2 gap-20">
+                  <div className="space-y-6">
+                     <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#4ea8de]">Contato & Emergência</p>
+                     <div className="space-y-4 font-bold text-lg tracking-tight">
+                        <p className="flex items-center gap-2"><Phone className="w-5 h-5 text-[#4ea8de]" /> (11) 98888-8888</p>
+                        <p className="flex items-center gap-2 opacity-40"><Mail className="w-5 h-5" /> contato@sorrisodental.com</p>
+                     </div>
+                  </div>
+                  <div className="space-y-6">
+                     <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#4ea8de]">Localização</p>
+                     <div className="space-y-4 font-bold text-lg tracking-tight">
+                        <p className="flex items-center gap-2"><MapPin className="w-5 h-5 text-[#4ea8de]" /> Jardins, São Paulo - SP</p>
+                        <p className="opacity-40">Av. Europa, 120 - 4º Andar</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-widest text-white/20 italic">
+               <p>© 2024 CLÍNICA SORRISO DENTAL • TODOS OS DIREITOS RESERVADOS</p>
+               <p className="text-white/10 uppercase font-black">Design High-Performance by Land Flow Lab • Demo Live</p>
+            </div>
+         </div>
       </footer>
     </div>
   );
+}
+
+function Stars() {
+   return (
+      <div className="flex gap-1 text-yellow-400">
+         {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-yellow-400" />)}
+      </div>
+   );
+}
+
+function PlanLabel({ name }) {
+   return (
+      <span className="text-3xl font-black uppercase tracking-tighter text-[#1a2b3c]">{name}</span>
+   )
+}
+
+function Mail(props) {
+   return (
+      <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+   )
 }

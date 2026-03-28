@@ -42,11 +42,16 @@ export function ContactForm() {
             Privacidade Garantida
           </motion.div>
           <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-loose uppercase">
-            Solicite seu <span className="text-gradient">Orçamento</span>
+            AUMENTE SUAS <span className="text-gradient">VENDAS</span>
           </h2>
-          <p className="text-white/40 text-lg md:text-xl font-medium tracking-tight max-w-2xl mx-auto leading-relaxed italic">
-            Não quer falar por WhatsApp agora? Descreva seu projeto e responderemos com uma proposta personalizada em breve.
-          </p>
+          <div className="space-y-4 max-w-2xl mx-auto">
+            <p className="text-white/60 text-lg md:text-xl font-medium tracking-tight leading-relaxed italic">
+              Em poucos dias você pode ter uma página pronta para atrair clientes e impulsionar seu negócio.
+            </p>
+            <p className="text-accent-cyan text-sm font-black uppercase tracking-[0.2em]">
+              Seu próximo cliente pode estar a um clique de distância.
+            </p>
+          </div>
         </div>
 
         <motion.form 
@@ -70,7 +75,9 @@ export function ContactForm() {
               name="email"
               required
               minLength={5}
+              maxLength={150} // Preventive constraint
               placeholder="exemplo@empresa.com"
+              aria-label="E-mail Profissional"
               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-4 focus:ring-accent-cyan/20 focus:border-accent-cyan/60 transition-all font-medium text-lg"
             />
             <ValidationError prefix="E-mail" field="email" errors={state.errors} className="text-xs text-red-500 mt-2 font-bold ml-2" />
@@ -85,8 +92,9 @@ export function ContactForm() {
               name="message"
               required
               minLength={10}
-              maxLength={500}
+              maxLength={1500} // Strategic constraint to avoid spam abuse
               placeholder="Qual o nicho do seu negócio? Qual seu objetivo principal?"
+              aria-label="Descrição do Projeto"
               className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-4 focus:ring-accent-purple/20 focus:border-accent-purple/60 min-h-[180px] transition-all font-medium text-lg"
             />
             <ValidationError prefix="Mensagem" field="message" errors={state.errors} className="text-xs text-red-500 mt-2 font-bold ml-2" />
