@@ -215,17 +215,33 @@ export default function DentistaPage() {
         </section>
 
         {/* Accepted Plans Section (New) */}
-        <section className="py-12 sm:py-32 bg-gray-50 overflow-hidden">
-           <div className="max-w-7xl mx-auto px-4 sm:px-10">
-              <div className="flex gap-4 sm:gap-20 overflow-x-auto no-scrollbar pb-4 sm:pb-0 sm:justify-center items-center opacity-60">
-                 {[
-                   "Amil Dental", "SulAmérica", "Unimed Odonto", "Bradesco", "Interodonto", "Care Plus",
-                   "MetLife", "Porto Seguro", "OdontoPrev", "Golden Cross", "BB Odonto", "Hapvida"
-                 ].map((name, i) => (
-                   <PlanLabel key={i} name={name} />
-                 ))}
-              </div>
-           </div>
+        <section className="py-20 sm:py-32 bg-gray-50 flex items-center overflow-hidden relative">
+           <div className="absolute inset-y-0 left-0 w-24 sm:w-64 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+           <div className="absolute inset-y-0 right-0 w-24 sm:w-64 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+           
+           <motion.div 
+              initial={{ x: "-50%" }}
+              animate={{ x: "0%" }}
+              transition={{
+                 x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 60,
+                    ease: "linear",
+                 },
+              }}
+              className="flex gap-20 sm:gap-40 whitespace-nowrap opacity-20 hover:opacity-50 transition-opacity w-max"
+           >
+              {[
+                "Amil Dental", "SulAmérica", "Unimed Odonto", "Bradesco", "Interodonto", "Care Plus",
+                "MetLife", "Porto Seguro", "OdontoPrev", "Golden Cross", "BB Odonto", "Hapvida",
+                // Duplicated for seamless loop
+                "Amil Dental", "SulAmérica", "Unimed Odonto", "Bradesco", "Interodonto", "Care Plus",
+                "MetLife", "Porto Seguro", "OdontoPrev", "Golden Cross", "BB Odonto", "Hapvida"
+              ].map((name, i) => (
+                <PlanLabel key={i} name={name} />
+              ))}
+           </motion.div>
         </section>
       </main>
 
@@ -279,7 +295,7 @@ function Stars() {
 
 function PlanLabel({ name }) {
    return (
-      <span className="text-xs sm:text-2xl font-bold uppercase tracking-widest text-[#1a2b3c] whitespace-nowrap bg-white px-6 py-3 rounded-full border border-gray-100 shadow-sm sm:bg-transparent sm:p-0 sm:border-none sm:shadow-none flex-shrink-0">
+      <span className="text-xl sm:text-4xl font-black uppercase tracking-[0.2em] text-[#1a2b3c] italic">
          {name}
       </span>
    )
