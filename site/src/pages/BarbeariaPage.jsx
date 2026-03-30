@@ -15,10 +15,10 @@ export default function BarbeariaPage() {
         </Link>
       </div>
 
-      <header className="py-8 px-10 flex justify-between items-center bg-black/40 backdrop-blur-lg border-b border-[#c9a063]/20 sticky top-[33px] z-40">
-        <div className="flex items-center gap-3">
-          <Scissors className="w-8 h-8 text-[#c9a063]" />
-          <span className="text-3xl font-black italic tracking-widest uppercase">D'BARBER <span className="text-[#c9a063]">PREMIUM</span></span>
+      <header className="py-6 sm:py-8 px-4 sm:px-10 flex justify-between items-center bg-black/40 backdrop-blur-lg border-b border-[#c9a063]/20 sticky top-[33px] z-40">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Scissors className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a063]" />
+          <span className="text-xl sm:text-3xl font-black italic tracking-widest uppercase">D'BARBER <span className="text-[#c9a063]">PREMIUM</span></span>
         </div>
         <nav className="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.3em]">
           <a href="#experiencia" className="hover:text-[#c9a063] transition-all">Experiência</a>
@@ -30,11 +30,11 @@ export default function BarbeariaPage() {
 
       <main>
         {/* Luxury Hero */}
-        <section className="relative py-32 px-10 overflow-hidden min-h-[90vh] flex items-center border-b border-[#c9a063]/10">
+        <section className="relative py-16 sm:py-32 px-4 sm:px-10 overflow-hidden min-h-[90vh] flex items-center border-b border-[#c9a063]/10">
            <div className="absolute inset-x-0 top-0 h-[800px] bg-gradient-to-b from-[#c9a063]/5 via-transparent to-transparent -z-10" />
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c9a063]/10 rounded-full blur-[140px] -z-10 opacity-30" />
 
-           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 sm:gap-24 items-center">
              <motion.div
                initial={{ opacity: 0, x: -30 }}
                animate={{ opacity: 1, x: 0 }}
@@ -44,9 +44,9 @@ export default function BarbeariaPage() {
                <div className="inline-flex items-center text-[10px] font-bold uppercase tracking-[0.5em] text-[#c9a063] border-b border-[#c9a063]/40 pb-4">
                  DEDICAÇÃO • ESTILO • LEGADO
                </div>
-               <h1 className="text-7xl md:text-9xl font-black leading-[0.85] tracking-tighter italic">
-                 A ARTE <br />
-                 DO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a063] to-[#ebd2ae] uppercase">VISUAL</span> <br />
+               <h1 className="text-4xl sm:text-7xl md:text-9xl font-black leading-[0.85] tracking-tighter italic">
+                 A ARTE <br className="hidden sm:block" />
+                 DO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a063] to-[#ebd2ae] uppercase">VISUAL</span> <br className="hidden sm:block" />
                  MASCULINO.
                </h1>
                <p className="text-[#f4e8d1]/60 text-xl font-sans italic opacity-80 leading-relaxed max-w-md">
@@ -99,8 +99,8 @@ export default function BarbeariaPage() {
         </section>
 
         {/* Premium Experience Section (New) */}
-        <section id="experiencia" className="py-32 px-10 bg-black/30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-20 border-y border-[#c9a063]/5">
-           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
+        <section id="experiencia" className="py-16 sm:py-32 px-4 sm:px-10 bg-black/30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-20 border-y border-[#c9a063]/5">
+           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 sm:gap-16">
               {[
                 { title: "Lounge & Bar", desc: "Desfrute de nosso bar exclusivo com cafés selecionados e cervejas artesanais cortesia.", icon: <Shield /> },
                 { title: "Consultoria", desc: "Análise visagista completa para alinhar o corte ao seu estilo e formato de rosto.", icon: <UserCheck /> },
@@ -119,9 +119,9 @@ export default function BarbeariaPage() {
 
         {/* Style Gallery Section (New) */}
         <section className="py-32 overflow-hidden">
-           <div className="max-w-7xl mx-auto px-10 mb-16 flex justify-between items-end">
+           <div className="max-w-7xl mx-auto px-4 sm:px-10 mb-12 sm:mb-16 flex justify-between items-end">
               <div className="space-y-4">
-                 <h2 className="text-4xl md:text-5xl font-black italic tracking-widest uppercase">GALERIA DE ESTILO</h2>
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black italic tracking-widest uppercase">GALERIA DE ESTILO</h2>
                  <p className="text-[#c9a063]/50 font-bold uppercase text-[10px] tracking-[0.5em]">Inspirações dos mestres da lâmina</p>
               </div>
               <div className="hidden md:flex gap-4">
@@ -130,14 +130,14 @@ export default function BarbeariaPage() {
               </div>
            </div>
            
-           <div className="flex gap-10 px-10 overflow-x-auto no-scrollbar scroll-smooth pb-10">
+           <div className="flex gap-6 sm:gap-10 px-4 sm:px-10 overflow-x-auto no-scrollbar scroll-smooth pb-10">
               {[
                 { title: "Fade Executive", desc: "Precisão lateral." },
                 { title: "Pompadour Clássico", desc: "Volume e elegância." },
                 { title: "Beard Sculpture", desc: "Linhas definidas." },
                 { title: "Crew Cut Modern", desc: "Praticidade militar." }
               ].map((style, i) => (
-                 <div key={i} className="min-w-[400px] aspect-[4/5] bg-[#1a1512] border border-[#c9a063]/10 group relative transition-all">
+                <div key={i} className="min-w-[280px] sm:min-w-[400px] aspect-[4/5] bg-[#1a1512] border border-[#c9a063]/10 group relative transition-all">
                     <div className="absolute inset-0 bg-[#c9a063]/10 opacity-0 group-hover:opacity-40 transition-opacity" />
                     <div className="absolute inset-x-8 bottom-8 z-10 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500">
                        <h3 className="text-2xl font-black uppercase italic">{style.title}</h3>
@@ -153,11 +153,11 @@ export default function BarbeariaPage() {
         </section>
 
         {/* Exclusive Services Menu */}
-        <section id="servicos" className="py-32 px-10 bg-black/60 border-y border-[#c9a063]/10 relative">
+        <section id="servicos" className="py-16 sm:py-32 px-4 sm:px-10 bg-black/60 border-y border-[#c9a063]/10 relative">
            <div className="absolute top-0 right-0 w-64 h-64 bg-[#c9a063]/5 blur-[100px] rounded-full pointer-events-none" />
-           <div className="max-w-5xl mx-auto space-y-24">
-              <div className="text-center space-y-8">
-                 <h2 className="text-5xl md:text-7xl font-black italic tracking-widest uppercase">CATÁLOGO DE SERVIÇOS</h2>
+           <div className="max-w-5xl mx-auto space-y-16 sm:space-y-24">
+              <div className="text-center space-y-6 sm:space-y-8">
+                 <h2 className="text-3xl sm:text-5xl md:text-7xl font-black italic tracking-widest uppercase">CATÁLOGO DE SERVIÇOS</h2>
                  <p className="text-[#c9a063]/40 font-sans italic max-w-xl mx-auto">Excelência técnica aplicada em cada detalhe da sua imagem pessoal.</p>
               </div>
               <div className="grid md:grid-cols-2 gap-16">
@@ -211,7 +211,7 @@ export default function BarbeariaPage() {
         </section>
       </main>
 
-      <footer className="py-24 px-10 bg-black border-t border-[#c9a063]/10 text-center space-y-12">
+      <footer className="py-12 sm:py-24 px-4 sm:px-10 bg-black border-t border-[#c9a063]/10 text-center space-y-12">
          <div className="flex justify-center gap-12 grayscale opacity-40 hover:opacity-100 transition-opacity">
             <Instagram className="w-6 h-6 hover:text-[#c9a063] cursor-pointer" />
             <Phone className="w-6 h-6 hover:text-[#c9a063] cursor-pointer" />

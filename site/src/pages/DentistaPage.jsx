@@ -15,12 +15,12 @@ export default function DentistaPage() {
         </Link>
       </div>
 
-      <header className="py-6 px-10 flex justify-between items-center bg-white/90 backdrop-blur-xl border-b border-gray-100 sticky top-[33px] z-40">
+      <header className="py-4 sm:py-6 px-4 sm:px-10 flex justify-between items-center bg-white/90 backdrop-blur-xl border-b border-gray-100 sticky top-[33px] z-40">
         <div className="flex items-center gap-2">
-           <div className="p-2 bg-blue-50 rounded-2xl shadow-sm">
-             <Heart className="w-8 h-8 text-[#4ea8de] fill-[#4ea8de]" />
+           <div className="p-1.5 sm:p-2 bg-blue-50 rounded-2xl shadow-sm">
+             <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-[#4ea8de] fill-[#4ea8de]" />
            </div>
-          <span className="text-2xl font-black text-[#1a2b3c] tracking-tighter uppercase italic">SORRISO <span className="text-[#4ea8de]">DENTAL</span></span>
+          <span className="text-lg sm:text-2xl font-black text-[#1a2b3c] tracking-tighter uppercase italic">SORRISO <span className="text-[#4ea8de]">DENTAL</span></span>
         </div>
         <nav className="hidden md:flex gap-12 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
           <a href="#tecnologia" className="hover:text-[#4ea8de] transition-colors">Prótese & Estética</a>
@@ -32,7 +32,7 @@ export default function DentistaPage() {
 
       <main>
         {/* Clinical Clean Hero */}
-        <section className="relative py-32 px-10 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-white min-h-[90vh] flex items-center">
+        <section className="relative py-16 sm:py-32 px-4 sm:px-10 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-white min-h-[90vh] flex items-center">
           <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -47,9 +47,9 @@ export default function DentistaPage() {
               >
                 Cuidado Moderno com Excelência
               </motion.div>
-              <h1 className="text-7xl md:text-8xl font-black text-[#1a2b3c] leading-[0.95] tracking-tighter italic">
-                A EVOLUÇÃO <br />
-                DO SEU <br />
+              <h1 className="text-4xl sm:text-7xl md:text-8xl font-black text-[#1a2b3c] leading-[0.95] tracking-tighter italic">
+                A EVOLUÇÃO <br className="hidden sm:block" />
+                DO SEU <br className="hidden sm:block" />
                 <span className="text-[#4ea8de] uppercase underline decoration-[#1a2b3c]/10 decoration-8 underline-offset-8">SORRISO</span>.
               </h1>
               <p className="text-gray-500 text-2xl font-medium leading-relaxed max-w-lg">
@@ -99,8 +99,8 @@ export default function DentistaPage() {
         </section>
 
         {/* Clinical Stats - Trust Bar */}
-        <section className="bg-[#1a2b3c] py-20 px-10 text-white">
-           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <section className="bg-[#1a2b3c] py-12 sm:py-20 px-4 sm:px-10 text-white">
+           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 text-center">
               <div className="space-y-2">
                  <div className="text-5xl font-black text-[#4ea8de]">5k+</div>
                  <p className="text-[10px] uppercase font-black tracking-[0.3em] opacity-40">Pacientes Felizes</p>
@@ -121,22 +121,22 @@ export default function DentistaPage() {
         </section>
 
         {/* Technology & Clinical Excellence (New) */}
-        <section id="tecnologia" className="py-40 px-10 max-w-7xl mx-auto space-y-32">
-           <div className="grid md:grid-cols-2 gap-24 items-center">
-              <div className="space-y-10 order-2 md:order-1">
-                 <h2 className="text-5xl md:text-7xl font-black text-[#1a2b3c] tracking-tighter italic uppercase leading-tight">TECNOLOGIA <br /> <span className="text-[#4ea8de]">A FAVOR</span> DA SAÚDE</h2>
-                 <p className="text-gray-400 text-xl font-medium leading-relaxed">Não é apenas sorrir, é sentir-se bem. Investimos nos equipamentos mais modernos do mundo para diagnósticos indolores e precisos.</p>
+        <section id="tecnologia" className="py-20 sm:py-40 px-4 sm:px-10 max-w-7xl mx-auto space-y-16 sm:space-y-32">
+           <div className="grid md:grid-cols-2 gap-12 sm:gap-24 items-center">
+              <div className="space-y-8 sm:space-y-10 order-2 md:order-1">
+                 <h2 className="text-3xl sm:text-5xl md:text-7xl font-black text-[#1a2b3c] tracking-tighter italic uppercase leading-tight">TECNOLOGIA <br /> <span className="text-[#4ea8de]">A FAVOR</span> DA SAÚDE</h2>
+                 <p className="text-gray-400 text-lg sm:text-xl font-medium leading-relaxed">Não é apenas sorrir, é sentir-se bem. Investimos nos equipamentos mais modernos do mundo para diagnósticos indolores e precisos.</p>
                  <div className="space-y-6">
                     {[
                       { title: "Escaneamento 3D Intraloral", desc: "Dê adeus às moldagens desconfortáveis com gesso." },
                       { title: "Anestesia Sem Dor (I.A.)", desc: "Controle digital de entrada para conforto absoluto." },
                       { title: "Laser Whitening Premium", desc: "Dentes brancos em apenas 45 minutos de sessão." }
                     ].map((tech, i) => (
-                      <div key={i} className="flex gap-6 group">
-                         <div className="mt-1"><CheckCircle className="w-6 h-6 text-[#4ea8de]" /></div>
+                      <div key={i} className="flex gap-4 sm:gap-6 group">
+                         <div className="mt-1"><CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#4ea8de]" /></div>
                          <div className="space-y-2">
-                            <h4 className="text-2xl font-black text-[#1a2b3c] uppercase italic tracking-tight">{tech.title}</h4>
-                            <p className="text-gray-500 text-sm font-medium">{tech.desc}</p>
+                            <h4 className="text-xl sm:text-2xl font-black text-[#1a2b3c] uppercase italic tracking-tight">{tech.title}</h4>
+                            <p className="text-gray-500 text-xs sm:text-sm font-medium">{tech.desc}</p>
                          </div>
                       </div>
                     ))}
@@ -156,10 +156,10 @@ export default function DentistaPage() {
         </section>
 
         {/* Success Stories (New) */}
-        <section id="transformacoes" className="py-32 px-10 bg-gray-50 border-y border-gray-100">
-           <div className="max-w-7xl mx-auto space-y-20">
+        <section id="transformacoes" className="py-16 sm:py-32 px-4 sm:px-10 bg-gray-50 border-y border-gray-100">
+           <div className="max-w-7xl mx-auto space-y-12 sm:space-y-20">
               <div className="text-center space-y-6">
-                 <h2 className="text-4xl font-extrabold text-[#1a2b3c] tracking-widest uppercase italic bg-white inline-block px-10 py-4 shadow-sm border border-gray-100">CASOS DE SUCESSO</h2>
+                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a2b3c] tracking-widest uppercase italic bg-white inline-block px-10 py-4 shadow-sm border border-gray-100">CASOS DE SUCESSO</h2>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                  {[
@@ -215,24 +215,25 @@ export default function DentistaPage() {
         </section>
 
         {/* Accepted Plans Section (New) */}
-        <section className="py-20 bg-gray-50 flex items-center justify-center overflow-hidden">
-           <div className="flex gap-20 opacity-20 whitespace-nowrap animate-infinite-scroll">
-              <PlanLabel name="Amil Dental" />
-              <PlanLabel name="SulAmérica" />
-              <PlanLabel name="Unimed Odonto" />
-              <PlanLabel name="Bradesco" />
-              <PlanLabel name="Interodonto" />
-              <PlanLabel name="Care Plus" />
-              <PlanLabel name="Amil Dental" />
+        <section className="py-12 sm:py-32 bg-gray-50 overflow-hidden">
+           <div className="max-w-7xl mx-auto px-4 sm:px-10">
+              <div className="flex gap-4 sm:gap-20 overflow-x-auto no-scrollbar pb-4 sm:pb-0 sm:justify-center items-center opacity-60">
+                 {[
+                   "Amil Dental", "SulAmérica", "Unimed Odonto", "Bradesco", "Interodonto", "Care Plus",
+                   "MetLife", "Porto Seguro", "OdontoPrev", "Golden Cross", "BB Odonto", "Hapvida"
+                 ].map((name, i) => (
+                   <PlanLabel key={i} name={name} />
+                 ))}
+              </div>
            </div>
         </section>
       </main>
 
-      <footer className="py-28 bg-[#1a2b3c] text-white overflow-hidden relative">
+      <footer className="py-16 sm:py-28 bg-[#1a2b3c] text-white overflow-hidden relative">
          <div className="absolute top-0 left-0 p-20 opacity-5 pointer-events-none">
             <PlusCircle className="w-64 h-64" />
          </div>
-         <div className="max-w-7xl mx-auto px-10 space-y-20 relative">
+         <div className="max-w-7xl mx-auto px-4 sm:px-10 space-y-16 sm:space-y-20 relative">
             <div className="flex flex-col md:flex-row justify-between items-start gap-16">
                <div className="space-y-8 max-w-sm">
                   <div className="flex items-center gap-2">
@@ -241,7 +242,7 @@ export default function DentistaPage() {
                   </div>
                   <p className="text-white/40 font-medium italic leading-relaxed">Sua nova experiência em odontologia premium. Localizada estrategicamente para melhor lhe atender.</p>
                </div>
-               <div className="grid grid-cols-2 lg:grid-cols-2 gap-20">
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-20">
                   <div className="space-y-6">
                      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#4ea8de]">Contato & Emergência</p>
                      <div className="space-y-4 font-bold text-lg tracking-tight">
@@ -278,7 +279,9 @@ function Stars() {
 
 function PlanLabel({ name }) {
    return (
-      <span className="text-3xl font-black uppercase tracking-tighter text-[#1a2b3c]">{name}</span>
+      <span className="text-xs sm:text-2xl font-bold uppercase tracking-widest text-[#1a2b3c] whitespace-nowrap bg-white px-6 py-3 rounded-full border border-gray-100 shadow-sm sm:bg-transparent sm:p-0 sm:border-none sm:shadow-none flex-shrink-0">
+         {name}
+      </span>
    )
 }
 

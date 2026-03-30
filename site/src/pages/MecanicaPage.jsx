@@ -15,12 +15,12 @@ export default function MecanicaPage() {
         </Link>
       </div>
 
-      <header className="py-6 px-8 flex justify-between items-center bg-black/40 backdrop-blur-lg border-b border-white/5 sticky top-[33px] z-40">
+      <header className="py-4 sm:py-6 px-4 sm:px-8 flex justify-between items-center bg-black/40 backdrop-blur-lg border-b border-white/5 sticky top-[33px] z-40">
         <div className="flex items-center gap-2">
-          <div className="p-2 bg-cyan-500/10 rounded-lg">
-             <Settings className="w-8 h-8 text-cyan-500 animate-slow-spin-slow" />
+          <div className="p-1.5 sm:p-2 bg-cyan-500/10 rounded-lg">
+             <Settings className="w-5 h-5 sm:w-8 sm:h-8 text-cyan-500 animate-slow-spin-slow" />
           </div>
-          <span className="text-2xl font-black italic tracking-tighter uppercase">MECÂNICA <span className="text-cyan-500 underline decoration-2 underline-offset-4">TECH</span></span>
+          <span className="text-lg sm:text-2xl font-black italic tracking-tighter uppercase">MECÂNICA <span className="text-cyan-500 underline decoration-2 underline-offset-4">TECH</span></span>
         </div>
         <nav className="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest text-white/50">
           <a href="#processo" className="hover:text-cyan-500 transition-colors">Diagnóstico</a>
@@ -34,7 +34,7 @@ export default function MecanicaPage() {
 
       <main>
         {/* Modern Hero Section */}
-        <section className="relative py-28 px-8 overflow-hidden min-h-[90vh] flex items-center">
+        <section className="relative py-12 sm:py-28 px-4 sm:px-8 overflow-hidden min-h-[90vh] flex items-center">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[140px] -z-10 translate-x-1/2 -translate-y-1/2" />
           
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -47,9 +47,9 @@ export default function MecanicaPage() {
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-500 text-[10px] font-black uppercase tracking-[0.3em]">
                 Centro de Inteligência Automotiva
               </div>
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] tracking-tight">
-                MAIS QUE <br />
-                MECÂNICA, <br />
+              <h1 className="text-5xl sm:text-7xl md:text-8xl font-black leading-[0.9] tracking-tight">
+                MAIS QUE <br className="hidden sm:block" />
+                MECÂNICA, <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">TECNOLOGIA.</span>
               </h1>
               <p className="text-white/50 text-xl leading-relaxed max-w-lg font-medium">
@@ -100,7 +100,7 @@ export default function MecanicaPage() {
         </section>
 
         {/* Diagnostic Process Section (New) */}
-        <section id="processo" className="py-32 px-8 bg-black/40 border-y border-white/5">
+        <section id="processo" className="py-16 sm:py-32 px-4 sm:px-8 bg-black/40 border-y border-white/5">
            <div className="max-w-7xl mx-auto space-y-20">
               <div className="grid md:grid-cols-2 gap-10 items-end">
                  <div className="space-y-6">
@@ -142,7 +142,7 @@ export default function MecanicaPage() {
         </section>
 
         {/* Niche services enhancement */}
-        <section id="servicos" className="py-32 px-8 max-w-7xl mx-auto flex flex-col items-center">
+        <section id="servicos" className="py-16 sm:py-32 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col items-center">
            <div className="text-center space-y-6 mb-20">
               <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-[10px] font-black uppercase tracking-[0.3em]">
                  Especialidades Tech
@@ -170,7 +170,7 @@ export default function MecanicaPage() {
         </section>
 
         {/* Niche Testimonials (New) */}
-        <section id="depoimentos" className="py-32 px-8 bg-cyan-500/5 relative">
+        <section id="depoimentos" className="py-16 sm:py-32 px-4 sm:px-8 bg-cyan-500/5 relative">
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
              {[
                { name: "Ricardo Santos", car: "BMW 320i", text: "Resolviam um problema de injeção que 3 oficinas não conseguiram. Diagnosticado em 10 minutos." },
@@ -181,7 +181,7 @@ export default function MecanicaPage() {
                    <div className="flex gap-1">
                       {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 text-cyan-500 fill-cyan-500" />)}
                    </div>
-                   <p className="text-xl font-medium italic text-white/70 leading-relaxed italic">"{t.text}"</p>
+                   <p className="text-xl font-medium italic text-white/70 leading-relaxed">"{t.text}"</p>
                    <div>
                       <p className="text-lg font-black text-cyan-500">{t.name}</p>
                       <p className="text-xs uppercase font-bold text-white/30 tracking-widest">{t.car}</p>
@@ -192,17 +192,17 @@ export default function MecanicaPage() {
         </section>
 
         {/* Emergency Footer (New) */}
-        <section className="py-24 px-8 border-t border-white/5">
-           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 p-12 rounded-[50px] bg-white text-black relative overflow-hidden">
+        <section className="py-12 sm:py-24 px-4 sm:px-8 border-t border-white/5">
+           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10 p-6 sm:p-12 rounded-[30px] sm:rounded-[50px] bg-white text-black relative overflow-hidden">
               <div className="absolute top-0 right-0 p-2 opacity-5">
                  <Settings className="w-64 h-64 -rotate-12" />
               </div>
-              <div className="space-y-4">
-                 <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">PANE ELÉTRICA <br /> OU MECÂNICA?</h3>
-                 <p className="font-bold text-black/50 uppercase text-xs tracking-[0.2em]">Atendimento de emergência 24h em toda capital.</p>
+              <div className="space-y-4 text-center md:text-left">
+                 <h3 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight leading-none">PANE ELÉTRICA <br /> OU MECÂNICA?</h3>
+                 <p className="font-bold text-black/50 uppercase text-[10px] sm:text-xs tracking-[0.2em]">Atendimento de emergência 24h em toda capital.</p>
               </div>
-              <button className="px-12 py-6 bg-black text-white rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-2xl flex items-center">
-                 CHAMAR AGORA <Phone className="ml-3 w-6 h-6 fill-current" />
+              <button className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-6 bg-black text-white rounded-2xl font-black text-lg sm:text-xl hover:scale-105 transition-all shadow-2xl flex items-center justify-center">
+                 CHAMAR AGORA <Phone className="ml-3 w-5 h-5 sm:w-6 sm:h-6 fill-current" />
               </button>
            </div>
         </section>

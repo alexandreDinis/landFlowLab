@@ -32,11 +32,11 @@ export function Hero() {
         </motion.div>
 
         {/* High-Conversion Headline */}
-        <h1 className="text-6xl md:text-[5.5rem] font-black tracking-tight leading-[0.9] md:leading-[0.9]">
-          TRANSFORME <br />
+        <h1 className="text-4xl sm:text-7xl md:text-[5.5rem] font-black tracking-tight leading-[0.9] md:leading-[0.9]">
+          TRANSFORME <br className="hidden sm:block" />
           <span className="text-gradient drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]">
             VISITANTES EM CLIENTES
-          </span> <br />
+          </span> <br className="hidden sm:block" />
           TODOS OS DIAS.
         </h1>
 
